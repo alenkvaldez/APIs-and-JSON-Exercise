@@ -8,6 +8,10 @@ namespace APIsAndJSON
 	{
         public static void KanyeQuote()
 		{
+            //for (int i = 1; i <= 5; i++)
+            //{
+
+
                 var client = new HttpClient();
 
                 var kanyeURL = "https://api.kanye.rest";
@@ -19,20 +23,30 @@ namespace APIsAndJSON
                 Console.WriteLine($"-----");
                 Console.WriteLine($"Kanye: '{kanyeQuote}'");
                 Console.WriteLine($"-----");
+            //}
+            
         }
         public static void RonQuote()
         {
-            var client = new HttpClient();
+            //for (int i = 0; i <= 5; i++)
+            //{
 
-            var ronURL = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
-            var ronResponse = client.GetStringAsync(ronURL).Result;
+                var client = new HttpClient();
 
-            var ronQuote = JArray.Parse(ronResponse).ToString().Replace('[', ' ').Replace(']', ' ').Trim();
+                var ronURL = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
-            Console.WriteLine($"-----");
-            Console.WriteLine($"Ron: '{ronQuote}'");
-            Console.WriteLine($"-----");
+                var ronResponse = client.GetStringAsync(ronURL).Result;
+
+                var ronQuote = JArray.Parse(ronResponse).ToString().Replace('[', ' ').Replace(']', ' ').Trim();
+
+
+
+                Console.WriteLine($"-----");
+                Console.WriteLine($"Ron: '{ronQuote}'");
+                Console.WriteLine($"-----");
+
+            //}
         }
     }
 }
